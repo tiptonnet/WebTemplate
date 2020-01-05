@@ -1,0 +1,49 @@
+<head>
+    <title>TiptonNet</title>
+</head>
+
+<template name="menu">
+    <button class="mnu_button" id="v0">Home</button>
+    {{#if currentUser}}
+    <button id="account" class="mnu_button">My Account</button>
+    {{/if}}
+    <button id="v1" class="mnu_button">Policies</button>
+    <button id="v2" class="mnu_button">About</button>
+    <button id="products" class="mnu_button">Products</button>
+
+    <span style="float:right; padding-right:100px;">{{> loginButtons}}</span>
+</template>
+
+<template name="txt_menu">
+    <span class="txt_mnu" id="v0">Home</span>
+    {{#if currentUser}}
+    <span id="account" class="txt_mnu">My Account</span>
+    {{/if}}
+    <span id="v1" class="txt_mnu">Policies</span>
+    <span id="v2" class="txt_mnu">About</span>
+    <span id="products" class="txt_mnu">Products</span>
+
+    <span style="float:right; padding-right:100px;">{{> loginButtons}}</span>
+</template>
+
+<template name="footer">
+    {{currentUser._id}}
+</template>
+
+<template name="App_body">
+        <div class="container" id="container">
+            <div class="menu_div">
+                {{> txt_menu}}
+            </div>
+            <div id="main_content">
+                {{> Template.dynamic template=main}}
+            </div>
+            <div id="footer">
+                {{> footer}}
+            </div>
+        </div>  
+</template>
+
+<body>
+
+</body>
